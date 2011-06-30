@@ -1,0 +1,10 @@
+
+/binaries
+/publish
+bin/
+Bin/
+obj/
+_ReSharper*/
+*.Cache
+*.cache
+/msbuild.log
