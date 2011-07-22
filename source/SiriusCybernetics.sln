@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusCybernetics", "SiriusCybernetics\SiriusCybernetics.csproj", "{D9136131-F938-430A-B685-900E5D98E0E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusCybernetics.Transporter", "SiriusCybernetics.Transporter\SiriusCybernetics.Transporter.csproj", "{6177EC78-67A4-4F91-8F3C-CE8E6D6AB14D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{D9136131-F938-430A-B685-900E5D98E0E6}.Debug|x86.Build.0 = Debug|x86
 		{D9136131-F938-430A-B685-900E5D98E0E6}.Release|x86.ActiveCfg = Release|x86
 		{D9136131-F938-430A-B685-900E5D98E0E6}.Release|x86.Build.0 = Release|x86
+		{6177EC78-67A4-4F91-8F3C-CE8E6D6AB14D}.Debug|x86.ActiveCfg = Debug|x86
+		{6177EC78-67A4-4F91-8F3C-CE8E6D6AB14D}.Debug|x86.Build.0 = Debug|x86
+		{6177EC78-67A4-4F91-8F3C-CE8E6D6AB14D}.Release|x86.ActiveCfg = Release|x86
+		{6177EC78-67A4-4F91-8F3C-CE8E6D6AB14D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
