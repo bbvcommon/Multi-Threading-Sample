@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-
-namespace SiriusCybernetics
+﻿namespace SiriusCybernetics
 {
+    using System;
+    using System.Linq;
     using System.Threading;
+    using System.Windows.Forms;
 
+    using bbv.Common.AsyncModule;
     using bbv.Common.EventBroker;
-    using bbv.Common.Events;
     using bbv.Common.StateMachine;
     using bbv.Common.Threading;
 
     using SiriusCybernetics.JokeImport;
+    using SiriusCybernetics.JokeTelling;
 
     public static class Program
     {
@@ -31,7 +30,7 @@ namespace SiriusCybernetics
             var vhpts = vhptManager.GetAllVhpts();
 
             var controllers = from vhpt in vhpts 
-                              select new VhptController(vhpt, new ActiveStateMachine<VhptStates, VhptEvents>());
+                              select new VhptController(vhpt, new ActiveStateMachine<VhptStates, VhptEvents>(), new JokeTeller(new ModuleController(), new JokeEngine()));
 
             foreach (var vhptController in controllers)
             {
@@ -68,6 +67,14 @@ namespace SiriusCybernetics
         {
             public void ImportJoke(string joke)
             {
+            }
+        }
+
+        public class JokeEngine : IJokeEngine
+        {
+            public string GetJoke()
+            {
+                return "a VHPT enters a bar ...";
             }
         }
     }

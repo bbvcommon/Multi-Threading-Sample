@@ -51,10 +51,13 @@ namespace SiriusCybernetics
 
         private readonly IStateMachine<VhptStates, VhptEvents> stateMachine;
 
-        public VhptController(IVhpt vhpt, IStateMachine<VhptStates, VhptEvents> stateMachine)
+        private readonly JokeTelling.IJokeTeller jokeTeller;
+
+        public VhptController(IVhpt vhpt, IStateMachine<VhptStates, VhptEvents> stateMachine, JokeTelling.IJokeTeller jokeTeller)
         {
             this.vhpt = vhpt;
             this.stateMachine = stateMachine;
+            this.jokeTeller = jokeTeller;
 
             this.vhptIdentification = new VhptIdentification(this.vhpt.Id, this.vhpt.Name);
 
@@ -79,6 +82,8 @@ namespace SiriusCybernetics
 
             this.vhpt.PassengerEnteredTransporter += (s, e) => this.OnPassengerEntered();
             this.vhpt.PassengerLeftTransporter += (s, e) => this.OnPassengerLeft();
+
+            this.vhpt.UnhappyPassengerOnBoard += (s, e) => this.jokeTeller.TellJoke(this.vhpt);
         }
 
         public void OnReceivedDestinationRequest(FloorEventArgs floorEventArgs)
