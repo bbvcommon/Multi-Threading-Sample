@@ -25,6 +25,12 @@ namespace SiriusCybernetics.JokeTelling
             this.jokeEngine = jokeEngine;
         }
 
+        public void Initialize()
+        {
+            this.controller.Initialize(this, true);
+            this.controller.Start();
+        }
+
         public void TellJoke(IVhpt vhpt)
         {
             this.controller.EnqueueMessage(vhpt);

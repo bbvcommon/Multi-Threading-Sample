@@ -58,6 +58,7 @@
         private static VhptController CreateVhptController(IVhpt vhpt, EventBroker eventBroker)
         {
             var jokeTeller = new JokeTeller(new ModuleController(), new JokeEngine());
+            jokeTeller.Initialize();
             eventBroker.Register(jokeTeller);
 
             return new VhptController(vhpt, new ActiveStateMachine<VhptStates, VhptEvents>(), jokeTeller);

@@ -11,9 +11,9 @@ namespace SiriusCybernetics
         private readonly int timeDilatationFactor;
         private int currentFloor;
         private readonly Random random;
-        private ModuleController asyncModule;
+        private IModuleController asyncModule;
 
-        public Vhpt(string name, int timeDilatationFactor)
+        public Vhpt(string name, int timeDilatationFactor, IModuleController moduleController)
         {
             this.timeDilatationFactor = timeDilatationFactor;
             this.Name = name;
@@ -23,8 +23,12 @@ namespace SiriusCybernetics
 
             this.random = new Random();
 
-            this.asyncModule = new ModuleController();
-            this.asyncModule.Initialize(this);
+            this.asyncModule = moduleController;
+        }
+
+        public void Initialize()
+        {
+            this.asyncModule.Initialize(this, true);
             this.asyncModule.AfterConsumeMessage += this.HandleAfterConsumeMessage;
             this.asyncModule.Start();
         }

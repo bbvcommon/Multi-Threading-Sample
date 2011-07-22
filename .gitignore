@@ -9,3 +9,5 @@ _ReSharper*/
 *.cache
 /msbuild.log
 source/SiriusCybernetics.suo
+source/SiriusCybernetics.5.1.ReSharper.user
+source/SiriusCybernetics.sln.docstates.suo
