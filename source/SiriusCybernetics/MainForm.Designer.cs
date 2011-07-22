@@ -30,6 +30,7 @@
         {
             this.vhpts = new System.Windows.Forms.TabControl();
             this.jokeImport = new SiriusCybernetics.JokeImport.JokeImportUserControl();
+            this.jokeTellingMonitorUserControl = new SiriusCybernetics.JokeTelling.JokeTellingMonitorUserControl();
             this.SuspendLayout();
             // 
             // vhpts
@@ -50,11 +51,19 @@
             this.jokeImport.Size = new System.Drawing.Size(81, 29);
             this.jokeImport.TabIndex = 1;
             // 
+            // jokeTellingMonitorUserControl1
+            // 
+            this.jokeTellingMonitorUserControl.Location = new System.Drawing.Point(12, 47);
+            this.jokeTellingMonitorUserControl.Name = "jokeTellingMonitorUserControl";
+            this.jokeTellingMonitorUserControl.Size = new System.Drawing.Size(155, 89);
+            this.jokeTellingMonitorUserControl.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 497);
+            this.Controls.Add(this.jokeTellingMonitorUserControl);
             this.Controls.Add(this.jokeImport);
             this.Controls.Add(this.vhpts);
             this.Name = "MainForm";
@@ -67,6 +76,7 @@
 
         private System.Windows.Forms.TabControl vhpts;
         private JokeImport.JokeImportUserControl jokeImport;
+        private JokeTelling.JokeTellingMonitorUserControl jokeTellingMonitorUserControl;
 
     }
 }

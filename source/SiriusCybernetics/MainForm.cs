@@ -21,9 +21,11 @@ namespace SiriusCybernetics
     using System.Collections.Generic;
     using System.Windows.Forms;
 
+    using bbv.Common.EventBroker;
+
     using SiriusCybernetics.JokeImport;
 
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IEventBrokerRegisterable
     {
         public MainForm()
         {
@@ -37,6 +39,16 @@ namespace SiriusCybernetics
         {
             this.InitializeJokeImport(importer);
             this.InitializeVhpts(vhpts, vhptUserControlFactory);
+        }
+
+        public void Register(IEventRegisterer eventRegisterer)
+        {
+            eventRegisterer.Register(this.jokeTellingMonitorUserControl);
+        }
+
+        public void Unregister(IEventRegisterer eventRegisterer)
+        {
+            eventRegisterer.Unregister(this.jokeTellingMonitorUserControl);
         }
 
         private void InitializeJokeImport(IImporter importer)

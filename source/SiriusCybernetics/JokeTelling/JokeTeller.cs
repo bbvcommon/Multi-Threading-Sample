@@ -1,6 +1,9 @@
 namespace SiriusCybernetics.JokeTelling
 {
+    using System;
+
     using bbv.Common.AsyncModule;
+    using bbv.Common.EventBroker;
 
     public interface IJokeTeller
     {
@@ -12,6 +15,9 @@ namespace SiriusCybernetics.JokeTelling
         private readonly IModuleController controller;
 
         private readonly IJokeEngine jokeEngine;
+
+        [EventPublication(EventTopics.ToldJoke)]
+        public event EventHandler ToldJoke;
 
         public JokeTeller(IModuleController controller, IJokeEngine jokeEngine)
         {
@@ -30,6 +36,16 @@ namespace SiriusCybernetics.JokeTelling
             var joke = this.jokeEngine.GetJoke();
 
             vhpt.TellJoke(joke);
+
+            this.OnToldJoke();
+        }
+
+        private void OnToldJoke()
+        {
+            if (this.ToldJoke != null)
+            {
+                this.ToldJoke(this, EventArgs.Empty);
+            }
         }
     }
 }
