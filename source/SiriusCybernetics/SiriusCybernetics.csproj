@@ -87,6 +87,12 @@
       <DependentUpon>JokeImportUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="JokeTelling\JokeTeller.cs" />
+    <Compile Include="JokeTelling\JokeTellingMonitorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JokeTelling\JokeTellingMonitorUserControl.Designer.cs">
+      <DependentUpon>JokeTellingMonitorUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JokeImport\JokeImportUserControl.resx">
       <DependentUpon>JokeImportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JokeTelling\JokeTellingMonitorUserControl.resx">
+      <DependentUpon>JokeTellingMonitorUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

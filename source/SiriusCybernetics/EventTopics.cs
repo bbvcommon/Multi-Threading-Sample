@@ -17,5 +17,7 @@ namespace SiriusCybernetics
         public const string PassengerEntered = "topic://Vhpt.PassengerEntered";
 
         public const string PassengerLeft = "topic://Vhpt.PassengerLeft";
+
+        public const string ToldJoke = "topic://JokeEngine.ToldJoke";
     }
 }

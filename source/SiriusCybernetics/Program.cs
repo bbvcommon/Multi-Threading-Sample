@@ -30,7 +30,7 @@
             var vhpts = vhptManager.GetAllVhpts();
 
             var controllers = from vhpt in vhpts 
-                              select new VhptController(vhpt, new ActiveStateMachine<VhptStates, VhptEvents>(), new JokeTeller(new ModuleController(), new JokeEngine()));
+                              select CreateVhptController(vhpt, eventBroker);
 
             foreach (var vhptController in controllers)
             {
@@ -50,7 +50,17 @@
                 from vhpt in vhpts select new VhptIdentification(vhpt.Id, vhpt.Name),
                 importer);
 
+            eventBroker.Register(mainForm);
+
             Application.Run(mainForm);
+        }
+
+        private static VhptController CreateVhptController(IVhpt vhpt, EventBroker eventBroker)
+        {
+            var jokeTeller = new JokeTeller(new ModuleController(), new JokeEngine());
+            eventBroker.Register(jokeTeller);
+
+            return new VhptController(vhpt, new ActiveStateMachine<VhptStates, VhptEvents>(), jokeTeller);
         }
 
         public class JokeOracle : IJokeOracle
