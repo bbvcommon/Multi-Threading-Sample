@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>bbv.Common.Threading</name>
+    </assembly>
+    <members>
+        <member name="T:bbv.Common.Threading.IUserInterfaceThreadSynchronizer">
+            <summary>
+            Provides functionality to execute operations on the user interface thread.
+            </summary>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute(System.Action)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``1(System.Action{``0},``0)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <typeparam name="T">Type of the method parameter.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value">The value passed to the action as method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <typeparam name="TParameter4">Type of the fourth method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <param name="value4">The fourth method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.ExecuteAsync(System.Action)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.ExecuteAsync``1(System.Action{``0},``0)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="T">Type of the method parameter.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value">The value passed to the action as method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.ExecuteAsync``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.ExecuteAsync``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.ExecuteAsync``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <typeparam name="TParameter4">Type of the fourth method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <param name="value4">The fourth method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``1(System.Func{``0})">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="action">The action.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``2(System.Func{``1,``0},``1)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``3(System.Func{``1,``2,``0},``1,``2)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``4(System.Func{``1,``2,``3,``0},``1,``2,``3)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizer.Execute``5(System.Func{``1,``2,``3,``4,``0},``1,``2,``3,``4)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <typeparam name="TParameter4">Type of the fourth method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <param name="value4">The fourth method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="T:bbv.Common.Threading.IUserInterfaceThreadSynchronizerLogExtension">
+            <summary>
+            Logs synchronization events in user interface thread synchronizer.
+            </summary>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizerLogExtension.LogSynchronous(System.Delegate,System.Int32,System.String)">
+            <summary>
+            Logs a synchronous operation.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="threadId">The source thread id.</param>
+            <param name="threadName">Name of the source thread.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizerLogExtension.LogSynchronous``1(System.Delegate,System.Int32,System.String,``0)">
+            <summary>
+            Logs the synchronous operation with result.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="action">The action.</param>
+            <param name="threadId">The source thread id.</param>
+            <param name="threadName">Name of the source thread.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.IUserInterfaceThreadSynchronizerLogExtension.LogAsynchronous(System.Delegate,System.Int32,System.String)">
+            <summary>
+            Logs the asynchronous.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="threadId">The source thread id.</param>
+            <param name="threadName">Name of the source thread.</param>
+        </member>
+        <member name="T:bbv.Common.Threading.ThreadHelper">
+            <summary>
+            Provides functionality to use usage of <see cref="T:System.Threading.Thread"/>s.
+            </summary>
+        </member>
+        <member name="F:bbv.Common.Threading.ThreadHelper.SleepRandomlyGenerator">
+            <summary>
+            Random is not thread safe. The thread static attribute must be used. 
+            But it is considered good practice to have static random instance.
+            </summary>
+        </member>
+        <member name="M:bbv.Common.Threading.ThreadHelper.SleepRandomly(System.Int32)">
+            <summary>
+            Sleeps a random time but max. the specified number of milliSeconds
+            </summary>
+            <param name="maxMilliseconds">Number of milliseconds to sleep.</param>
+        </member>
+        <member name="T:bbv.Common.Threading.UserInterfaceThreadSynchronizer">
+            <summary>
+            Executes operations on the user interface thread.
+            </summary>
+        </member>
+        <member name="F:bbv.Common.Threading.UserInterfaceThreadSynchronizer.synchronizationContext">
+            <summary>
+            The synchronization context used to switch threads.
+            </summary>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.#ctor(System.Threading.SynchronizationContext,bbv.Common.Threading.IUserInterfaceThreadSynchronizerLogExtension)">
+            <summary>
+            Initializes a new instance of the <see cref="T:bbv.Common.Threading.UserInterfaceThreadSynchronizer"/> class.
+            </summary>
+            <param name="synchronizationContext">The synchronization context used for synchronization.</param>
+            <param name="logExtension">The log extension used to log synchronization events.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.#ctor(System.Threading.SynchronizationContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:bbv.Common.Threading.UserInterfaceThreadSynchronizer"/> class
+            with no logging.
+            </summary>
+            <param name="synchronizationContext">The synchronization context used for synchronization.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:bbv.Common.Threading.UserInterfaceThreadSynchronizer"/> class
+            with synchronization context of current thread and no logging.
+            </summary>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute(System.Action)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``1(System.Action{``0},``0)">
+            <summary>
+            Executes the specified action on the user interface thread.
+            </summary>
+            <typeparam name="T">Type of the method parameter.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value">The value passed to the action as method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Executes the specified action.
+            </summary>
+            <typeparam name="TParameter1">The type of the 1.</typeparam>
+            <typeparam name="TParameter2">The type of the 2.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Executes the specified action.
+            </summary>
+            <typeparam name="TParameter1">The type of the 1.</typeparam>
+            <typeparam name="TParameter2">The type of the 2.</typeparam>
+            <typeparam name="TParameter3">The type of the 3.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="value3">The value3.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Executes the specified action.
+            </summary>
+            <typeparam name="TParameter1">The type of the 1.</typeparam>
+            <typeparam name="TParameter2">The type of the 2.</typeparam>
+            <typeparam name="TParameter3">The type of the 3.</typeparam>
+            <typeparam name="TParameter4">The type of the 4.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="value3">The value3.</param>
+            <param name="value4">The value4.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.ExecuteAsync(System.Action)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.ExecuteAsync``1(System.Action{``0},``0)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="T">Type of the method parameter.</typeparam>
+            <param name="action">The action.</param>
+            <param name="value">The value passed to the action as method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.ExecuteAsync``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.ExecuteAsync``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.ExecuteAsync``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <typeparam name="TParameter4">Type of the fourth method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <param name="value4">The fourth method parameter.</param>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``1(System.Func{``0})">
+            <summary>
+            Executes the specified action.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="action">The action.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``2(System.Func{``1,``0},``1)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``3(System.Func{``1,``2,``0},``1,``2)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``4(System.Func{``1,``2,``3,``0},``1,``2,``3)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+        <member name="M:bbv.Common.Threading.UserInterfaceThreadSynchronizer.Execute``5(System.Func{``1,``2,``3,``4,``0},``1,``2,``3,``4)">
+            <summary>
+            Executes the specified action on the user interface thread asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TParameter1">Type of the first method parameter</typeparam>
+            <typeparam name="TParameter2">Type of the second method parameter</typeparam>
+            <typeparam name="TParameter3">Type of the third method parameter</typeparam>
+            <typeparam name="TParameter4">Type of the fourth method parameter</typeparam>
+            <param name="action">The action.</param>
+            <param name="value1">The first method parameter.</param>
+            <param name="value2">The second method parameter.</param>
+            <param name="value3">The third method parameter.</param>
+            <param name="value4">The fourth method parameter.</param>
+            <returns>The result of the action.</returns>
+        </member>
+    </members>
+</doc>

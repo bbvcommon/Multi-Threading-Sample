@@ -5,9 +5,14 @@ using System.Windows.Forms;
 
 namespace SiriusCybernetics
 {
+    using System.Threading;
+
     using bbv.Common.EventBroker;
     using bbv.Common.Events;
     using bbv.Common.StateMachine;
+    using bbv.Common.Threading;
+
+    using SiriusCybernetics.JokeImport;
 
     public static class Program
     {
@@ -36,12 +41,34 @@ namespace SiriusCybernetics
             }
 
             var mainForm = new MainForm();
+            var importDialogFactory = new JokeImportProgressDialogFactory();
+            var importer = new Importer(new JokeOracle(), new JokeImporter(), importDialogFactory, new UserInterfaceThreadSynchronizer());
 
+            importDialogFactory.Initialize(mainForm, importer);
+            
             mainForm.Initialize(
                 new VhptUserControlFactory(eventBroker),
-                from vhpt in vhpts select new VhptIdentification(vhpt.Id, vhpt.Name));
+                from vhpt in vhpts select new VhptIdentification(vhpt.Id, vhpt.Name),
+                importer);
 
             Application.Run(mainForm);
+        }
+
+        public class JokeOracle : IJokeOracle
+        {
+            public string CreateJoke()
+            {
+                Thread.Sleep(50);
+
+                return "joke";
+            }
+        }
+
+        public class JokeImporter : IJokeImporter
+        {
+            public void ImportJoke(string joke)
+            {
+            }
         }
     }
 }

@@ -21,6 +21,8 @@ namespace SiriusCybernetics
     using System.Collections.Generic;
     using System.Windows.Forms;
 
+    using SiriusCybernetics.JokeImport;
+
     public partial class MainForm : Form
     {
         public MainForm()
@@ -30,7 +32,19 @@ namespace SiriusCybernetics
 
         public void Initialize(
             IVhptUserControlFactory vhptUserControlFactory,
-            IEnumerable<VhptIdentification> vhpts)
+            IEnumerable<VhptIdentification> vhpts,
+            IImporter importer)
+        {
+            this.InitializeJokeImport(importer);
+            this.InitializeVhpts(vhpts, vhptUserControlFactory);
+        }
+
+        private void InitializeJokeImport(IImporter importer)
+        {
+            this.jokeImport.Initialize(importer);
+        }
+
+        private void InitializeVhpts(IEnumerable<VhptIdentification> vhpts, IVhptUserControlFactory vhptUserControlFactory)
         {
             foreach (var vhptId in vhpts)
             {
@@ -39,7 +53,6 @@ namespace SiriusCybernetics
                 var tabPage = new TabPage(vhptId.Name);
                 tabPage.Controls.Add(vhptControl);
                 this.vhpts.TabPages.Add(tabPage);
-
             }
         }
     }
